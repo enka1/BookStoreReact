@@ -5,6 +5,6 @@ export default function (state = [], action) {
     case LATEST_BOOK:
       return action.payload
     default:
-      return null
+      return state
   }
 }

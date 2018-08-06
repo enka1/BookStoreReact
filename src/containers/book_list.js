@@ -13,7 +13,7 @@ class BookList extends Component {
         .books
         .map(book => <Book className="col" book={book} key={book.book_id}/>)
     }
-    return 'Nothing here'
+    
   }
 
   async componentDidMount() {

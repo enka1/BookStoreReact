@@ -60,7 +60,11 @@ export class Book extends Component {
         <div className="divider"></div>
         <p className="book-name">{this.props.book.book_name}</p>
         <p className="price">{convert_price(this.props.book.price)}₫</p>
-        <BookFlash x={this.state.x} y={this.state.y} isInvisible={this.state.isHover}/>
+        <BookFlash
+          x={this.state.x}
+          author_id={this.props.book.author_id}
+          y={this.state.y}
+          isInvisible={this.state.isHover}/>
       </BookLayout>
     )
   }

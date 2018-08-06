@@ -3,16 +3,20 @@ import styled from 'styled-components'
 
 export class BookFlash extends Component {
   render() {
-    return (
-      <BookInfo
-        posX={this.props.x}
-        posY={this.props.y}
-        invisible={this.props.isInvisible}>
-        <h1>Book Info</h1>
-        <p>x:{this.props.x}
-          - y:{this.props.y}</p>
-      </BookInfo>
-    )
+    if (this.props.author) {
+      return (
+        <BookInfo
+          posX={this.props.x}
+          posY={this.props.y}
+          invisible={this.props.isInvisible}>
+          <h1>Book Info</h1>
+          <p>x:{this.props.x}
+            - y:{this.props.y}</p>
+        </BookInfo>
+      )
+    }
+    return (null)
+
   }
 }
 
