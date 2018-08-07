@@ -5,11 +5,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './style/index.css'
 
 import {store} from './store'
-import BookList from './containers/book_list'
+import {Routes} from './routes'
 
 const App = () => (
   <Provider store={store}>
-    <BookList/>
+    <Routes/>
   </Provider>
 )
 

@@ -1,25 +1,12 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
 import styled from 'styled-components'
 import webfont from 'webfontloader'
 
-import {BookFlash} from './book-flash-info'
-
-const convert_price = price => {
-  let convert = ''
-  let j = 0
-  price = price
-    .toString()
-    .split('')
-  for (let i = price.length - 1; 0 <= i; i--) {
-    if (j === 3) {
-      j = 0
-      price[i] = price[i] + '.'
-    }
-    convert = price[i] + convert
-    j++
-  }
-  return convert
-}
+import {history} from '../routes'
+import {BookFlash} from './BookFlash'
+import {convert_price} from '../method/convert_price'
+import {fetch_book_detail} from '../actions/book/fetch_book_detail.action'
 
 webfont.load({
   google: {
@@ -27,7 +14,7 @@ webfont.load({
   }
 })
 
-export class Book extends Component {
+class Book extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -45,11 +32,17 @@ export class Book extends Component {
   mouseMoveHandle(e) {
     this.setState({x: e.screenX, y: e.screenY})
   }
+  onClickHandle(){
+    this.props.dispatch(fetch_book_detail(this.props.book.book_id))
+    history.push('/book-detail')
+  }
   render() {
     return (
-      <BookLayout className={this.props.className}>
+      <BookLayout
+        className={this.props.className}
+        onClick={() => this.onClickHandle()}>
         <img
-          className="book-image"
+          className="book-image shadow"
           onMouseEnter={() => this.hoverHandle(true)}
           onMouseOut={() => this.hoverHandle(false)}
           onMouseMove={this
@@ -62,7 +55,7 @@ export class Book extends Component {
         <p className="price">{convert_price(this.props.book.price)}₫</p>
         <BookFlash
           x={this.state.x}
-          author_id={this.props.book.author_id}
+          book={this.props.book}
           y={this.state.y}
           isInvisible={this.state.isHover}/>
       </BookLayout>
@@ -76,6 +69,7 @@ const BookLayout = styled.div `
     .divider{
         width: 25%;
         margin: 1rem auto;
+        margin-top: 2rem;
         border-bottom: .2rem solid black;
     }
     .book-name{
@@ -92,3 +86,5 @@ const BookLayout = styled.div `
         font-weight: bold;
     }
 `
+
+export default connect()(Book)
