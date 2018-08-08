@@ -7,6 +7,7 @@ import {BookDetailPage} from '../page/BookDetailPage'
 import {NewBooksPage} from '../page/NewBooksPage'
 import {Menu} from './Menu'
 import {Header} from './Header'
+import {Footer} from './Footer'
 import {BookSlider} from '../containers/BookSlider'
 export const history = createBrowserHistory()
 

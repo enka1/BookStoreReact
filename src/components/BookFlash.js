@@ -25,17 +25,18 @@ export class BookFlash extends Component {
           <p>
             <strong>Tác giả:
             </strong>
-            {this.props.book.author.first_name + ' ' + this.props.book.author.last_name}</p>
+            {' ' + this.props.book.author.first_name + ' ' + this.props.book.author.last_name}</p>
           <p>
             <strong>Nhà xuất bản:
             </strong>
-            {this.props.book.publisher.publisher_name}</p>
+            {' ' + this.props.book.publisher.publisher_name}</p>
           <p>
             <strong>Ngày phát hành:
             </strong>
-            {moment(this.props.book.on_shelf_time).format('DD/MM/YYYY')}</p>
+            {' ' + moment(this.props.book.on_shelf_time).format('DD/MM/YYYY')}</p>
           <p>
-            <strong>Sơ lược: </strong>
+            <strong>Sơ lược:
+            </strong>
             {this.getBookDescription()}</p>
         </BookInfo>
       )
@@ -68,4 +69,5 @@ const BookInfo = styled.div `
     .book-img{
       width: 15rem;
     }
+    transition:all.2s;
 `

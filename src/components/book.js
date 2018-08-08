@@ -32,14 +32,16 @@ class Book extends Component {
   mouseMoveHandle(e) {
     this.setState({x: e.screenX, y: e.screenY})
   }
-  onClickHandle(){
-    this.props.dispatch(fetch_book_detail(this.props.book.book_id))
+  onClickHandle() {
+    this
+      .props
+      .dispatch(fetch_book_detail(this.props.book.book_id))
     history.push('/book-detail')
   }
   render() {
     return (
       <BookLayout
-        className={this.props.className}
+        className={this.props.className + ' mb-5'}
         onClick={() => this.onClickHandle()}>
         <img
           className="book-image shadow"
@@ -50,7 +52,7 @@ class Book extends Component {
           .bind(this)}
           src={this.props.book.image_url}
           alt=""/>
-        <div className="divider"></div>
+        <div className="book-divider"></div>
         <p className="book-name">{this.props.book.book_name}</p>
         <p className="price">{convert_price(this.props.book.price)}₫</p>
         <BookFlash
@@ -66,11 +68,10 @@ class Book extends Component {
 const BookLayout = styled.div `
     text-align: center;
     position: relative;
-    .divider{
+    .book-divider{
         width: 25%;
         margin: 1rem auto;
-        margin-top: 2rem;
-        border-bottom: .2rem solid black;
+        border-bottom: .3rem solid black;
     }
     .book-name{
         font-family: 'Montserrat', sans-serif;
@@ -80,6 +81,10 @@ const BookLayout = styled.div `
     .book-image{
         cursor: pointer;
         height: 34rem;
+    }
+    .book-image:hover{
+      transform: translateY(-2rem);
+      transition: all.2s
     }
     .price{
         font-size: 1.3rem;

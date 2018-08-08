@@ -1,33 +1,60 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
+
+import {fetch_random_book} from '../method/fetch_book_data'
+import {SliderItem} from '../components/SliderItem'
+
 export class BookSlider extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      books: []
+    }
+  }
+  async componentWillMount() {
+    this.setState({books: await fetch_random_book()})
+  }
+  renderSlider() {
+    if (this.state.books.length > 0) {
+      let slider_item = []
+      for (let i = 0; i < this.state.books.length; i++) {
+        slider_item.push(<SliderItem
+          key={this.state.books[i].book_id}
+          book={this.state.books[i]}
+          className={i === 0
+          ? 'carousel-item active'
+          : 'carousel-item'}/>)
+      }
+      return slider_item
+    }
+  }
   render() {
     return (
       <SliderLayout>
-        <div id="bookSliders" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#bookSliders" data-slide-to="0" class="active"></li>
+        <div id="bookSliders" className="carousel slide" data-ride="carousel">
+          <ol className="carousel-indicators">
+            <li data-target="#bookSliders" data-slide-to="0" className="active"></li>
             <li data-target="#bookSliders" data-slide-to="1"></li>
             <li data-target="#bookSliders" data-slide-to="2"></li>
           </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active"></div>
+          <div className="carousel-inner">
+            {this.renderSlider()}
           </div>
           <a
-            class="carousel-control-prev"
+            className="carousel-control-prev"
             href="#bookSliders"
             role="button"
             data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="sr-only">Previous</span>
           </a>
           <a
-            class="carousel-control-next"
+            className="carousel-control-next"
             href="#bookSliders"
             role="button"
             data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="sr-only">Next</span>
           </a>
         </div>
       </SliderLayout>
@@ -36,13 +63,5 @@ export class BookSlider extends Component {
 }
 
 const SliderLayout = styled.div `
-  max-height: 50vh;
-`
-
-const SliderItem = styled.div `
-    background-size:cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-image: linear-gradient() url(${props => props.image_url});
-
+  max-height: 75vh;
 `
