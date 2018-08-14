@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 
-import {BookList} from '../components/BookList'
-import {Paginate} from '../components/Paginate'
-import {fetch_latest_book} from '../method/fetch_book_data'
+import {BookList} from '../../components/users/BookList'
+import {Paginate} from '../../components/users/Paginate'
+import {fetch_latest_book} from '../../methods/fetch_book_data'
 
 export class NewBooksPage extends Component {
   constructor(props) {

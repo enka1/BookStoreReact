@@ -14,27 +14,16 @@ export class BookList extends Component {
   }
   render() {
     return (
-      <LatestArrived>
-        <p
-          className="text-center display-4 font-weight-bold">{this.props.title}</p>
-        <div
-          className="divider mx-auto"/>
+      <BookListStyle>
         <div className="row book-gem-box">{this.renderBookList()}</div>
         <div className="divider-right mx-auto "></div>
-        {this.props.link
-          ? (
-            <a href={this.props.link} className="float-right mt-5">
-              <em className="h3">View more ►</em>
-            </a>
-          )
-          : null}
-      </LatestArrived>
+      </BookListStyle>
 
     )
   }
 }
 
-const LatestArrived = styled.div `
+const BookListStyle = styled.div `
   overflow:hidden;
   padding-bottom: 2rem;
   .book-gem-box{

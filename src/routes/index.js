@@ -2,30 +2,26 @@ import React, {Component} from 'react'
 import {Switch, Route, Router} from 'react-router-dom'
 import {createBrowserHistory} from 'history'
 
-import {Index} from '../page/Index'
-import {BookDetailPage} from '../page/BookDetailPage'
-import {NewBooksPage} from '../page/NewBooksPage'
-import {Menu} from './Menu'
-import {Header} from './Header'
-import {Footer} from './Footer'
-import {BookSlider} from '../containers/BookSlider'
+import {Index} from '../pages/publics/Index'
+import {BookDetailPage} from '../pages/publics/BookDetailPage'
+import {NewBooksPage} from '../pages/publics/NewBooksPage'
+import {LoginPage} from '../pages/publics/LoginPage'
+import {withPublicComponent} from '../mixins/public'
+import {OrderHistoryPage} from '../pages/admins/OrderHistoryPage'
 export const history = createBrowserHistory()
 
 export class Routes extends Component {
   render() {
     return (
-      <div>
-        <Header/>
-        <Menu/>
-        <BookSlider/>
-        <Router history={history}>
-          <Switch>
-            <Route exact path="/" component={Index}></Route>
-            <Route exact path="/book-detail" component={BookDetailPage}></Route>
-            <Route exact path="/news-book" component={NewBooksPage}></Route>
-          </Switch>
-        </Router>
-      </div>
+      <Router history={history}>
+        <Switch>
+          <Route exact path="/" component={withPublicComponent(Index)}></Route>
+          <Route path="/book-detail/:id" component={withPublicComponent(BookDetailPage)}></Route>
+          <Route exact path="/news-book" component={withPublicComponent(NewBooksPage)}></Route>
+          <Route exact path="/login" component={LoginPage}></Route>
+          <Route path="/admin/order-history" component={OrderHistoryPage}></Route>
+        </Switch>
+      </Router>
     )
   }
 }

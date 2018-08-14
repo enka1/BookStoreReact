@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 
-import {fetch_best_seller_book} from '../method/fetch_book_data'
+import {fetch_best_seller_book} from '../../methods/fetch_book_data'
 export class BestSeller extends Component {
   constructor(props) {
     super(props)

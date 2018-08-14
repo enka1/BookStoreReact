@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 
-import {fetch_random_book} from '../method/fetch_book_data'
-import {SliderItem} from '../components/SliderItem'
+import {fetch_random_book} from '../../methods/fetch_book_data'
+import {SliderItem} from '../users/SliderItem'
 
 export class BookSlider extends Component {
   constructor(props) {

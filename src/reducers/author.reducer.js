@@ -1,6 +1,6 @@
 import {
     AUTHOR_DETAIL
-} from '../actions/author/fetch_author_detail.action'
+} from '../actions/users/author/fetch_author_detail.action'
 
 export default function (state = [], action) {
     switch (action.type) {

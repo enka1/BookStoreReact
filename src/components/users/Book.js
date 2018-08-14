@@ -3,10 +3,10 @@ import {connect} from 'react-redux'
 import styled from 'styled-components'
 import webfont from 'webfontloader'
 
-import {history} from '../routes'
+import {history} from '../../routes/index'
 import {BookFlash} from './BookFlash'
-import {convert_price} from '../method/convert_price'
-import {fetch_book_detail} from '../actions/book/fetch_book_detail.action'
+import {convert_price} from '../../methods/convert_price'
+import {fetch_book_detail} from '../../actions/users/book/fetch_book_detail.action'
 
 webfont.load({
   google: {
@@ -36,7 +36,7 @@ class Book extends Component {
     this
       .props
       .dispatch(fetch_book_detail(this.props.book.book_id))
-    history.push('/book-detail')
+    history.push(`/book-detail/${this.props.book.book_id}`)
   }
   render() {
     return (
@@ -80,7 +80,7 @@ const BookLayout = styled.div `
     }
     .book-image{
         cursor: pointer;
-        height: 34rem;
+        height: 30rem;
     }
     .book-image:hover{
       transform: translateY(-2rem);
