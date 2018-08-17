@@ -1,27 +1,73 @@
 import React, {Component} from 'react'
-import {BookList} from '../../components/users/BookList'
-import {fetch_latest_book_INDEX} from '../../methods/fetch_book_data'
+import {connect} from 'react-redux'
+import styled from 'styled-components';
 
-export class Index extends Component {
+import {BookList} from '../../components/users/BookList'
+import {SearchBar} from '../../components/public/SearchBar'
+import BookGenre from '../../components/public/BookGenre'
+import Paginate from '../../components/users/Paginate'
+import {fetch_latest_book_default} from '../../actions/users/books/fetch_book_list.action'
+
+class Index extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      new_books: []
-    }
+    this.changePage = this
+      .changePage
+      .bind(this)
   }
-  async componentDidMount() {
-    this.setState({new_books: await fetch_latest_book_INDEX()})
+  componentDidMount() {
+    this
+      .props
+      .dispatch(fetch_latest_book_default())
+  }
+  changePage(page) {
+    this
+      .props
+      .dispatch(fetch_latest_book_default(page))
+    document
+      .getElementById('book-gem-box')
+      .scrollIntoView({behavior: 'smooth', block: 'start'})
   }
   render() {
     return (
-      <div className="container pt-5">
+      <div className="container pt-5" id="book-gem-box">
         <div className="row">
-          <div className="col-9">
-            <BookList title="Sách mới" link="news-book" books={this.state.new_books}/>
+          <div className="col-9 offset-3">
+            <div className="row">
+              <div className="col d-flex align-items-center">
+                
+              </div>
+              <div className="col ml-auto">
+                <SearchBar/>
+              </div>
+            </div>
           </div>
-          <div className="col-3"></div>
+
+        </div>
+        <div className="row mt-5">
+          <div className="col-3">
+            <BookGenre/>
+          </div>
+          <div className="col-9">
+            <BookList books={this.props.books.data}/>
+            <Paginate
+              changePage={this.changePage}
+              currentPage={this.props.books.current_page}
+              totalPage={this.props.books.last_page}/>
+          </div>
         </div>
       </div>
     )
   }
 }
+
+const Icon = styled.i `
+  font-size: 2rem;
+  color:#4a148c;
+`
+
+const mapStateToProps = state => {
+  return {books: state.books}
+}
+
+export default connect(mapStateToProps)(Index)

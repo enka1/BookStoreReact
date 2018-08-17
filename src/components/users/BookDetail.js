@@ -4,7 +4,7 @@ import moment from 'moment'
 import styled from 'styled-components'
 import webfont from 'webfontloader'
 
-import {fetch_book_detail} from '../../actions/users/book/fetch_book_detail.action'
+import {fetch_book_detail} from '../../actions/users/books/fetch_book_detail.action'
 
 webfont.load({
   google: {

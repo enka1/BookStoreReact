@@ -9,22 +9,22 @@ export class Menu extends Component {
           <ul className="navbar-nav">
             <li className="nav-item">
               <a href="/" className="nav-link lead">
-                <i class="fas fa-home mr-3 text-primary"></i>
+                <i className="fas fa-home mr-3 text-primary"></i>
                 Trang chủ</a>
             </li>
             <li className="nav-item">
               <a href="" className="nav-link lead">
-                <i class="fas fa-th mr-3 text-danger"></i>
+                <i className="fas fa-th mr-3 text-danger"></i>
                 Danh mục sách</a>
             </li>
             <li className="nav-item">
               <a href="" className="nav-link lead">
-                <i class="fas fa-trophy text-warning mr-3"></i>
+                <i className="fas fa-trophy text-warning mr-3"></i>
                 Sách bán chạy</a>
             </li>
             <li className="nav-item">
               <a href="" className="nav-link lead">
-                <i class="fas fa-shopping-cart text-dark mr-3"></i>
+                <i className="fas fa-shopping-cart text-dark mr-3"></i>
                 Giỏ hàng
               </a>
             </li>

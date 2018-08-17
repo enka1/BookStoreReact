@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 
-import {fetch_random_book} from '../../methods/fetch_book_data'
+import {fetch_book_slider} from '../../methods/fetch_book_data'
 import {SliderItem} from '../users/SliderItem'
 
 export class BookSlider extends Component {
@@ -12,7 +12,7 @@ export class BookSlider extends Component {
     }
   }
   async componentWillMount() {
-    this.setState({books: await fetch_random_book()})
+    this.setState({books: await fetch_book_slider()})
   }
   renderSlider() {
     if (this.state.books.length > 0) {

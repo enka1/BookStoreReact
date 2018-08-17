@@ -15,7 +15,7 @@ export class BookList extends Component {
   render() {
     return (
       <BookListStyle>
-        <div className="row book-gem-box">{this.renderBookList()}</div>
+        <div className="row">{this.renderBookList()}</div>
         <div className="divider-right mx-auto "></div>
       </BookListStyle>
 
@@ -24,11 +24,7 @@ export class BookList extends Component {
 }
 
 const BookListStyle = styled.div `
-  overflow:hidden;
-  padding-bottom: 2rem;
-  .book-gem-box{
-    padding-top: 5rem;
-  }
+  min-height: 95vh;
   .divider{
     border-bottom: 3px solid black;
     width: 4rem;

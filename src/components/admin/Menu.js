@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import styled from 'styled-components'
 import webfont from 'webfontloader'
 
+import {history} from '../../routes/index'
+
 webfont.load({
   google: {
     families: ['Lato']
@@ -11,11 +13,7 @@ webfont.load({
 export class Menu extends Component {
   render() {
     return (
-      <MenuStyle>
-        <img
-          src="https://image.flaticon.com/icons/png/512/284/284772.png"
-          className="icon my-4"
-          alt=""/>
+      <MenuStyle className="pt-5">
         <ul className="menu-list">
           <li className="menu-list__item">
             <a href="" className="menu-list__link">
@@ -29,7 +27,7 @@ export class Menu extends Component {
             <a href="" className="menu-list__link">
               <i class="mr-3 fas fa-history"></i>History</a>
           </li>
-          <li className="menu-list__item">
+          <li className="menu-list__item" onClick={() => history.push('/admin/storage')}>
             <a href="" className="menu-list__link">
               <i class="mr-3 fas fa-store"></i>Storage</a>
           </li>

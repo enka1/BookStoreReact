@@ -6,7 +6,7 @@ import webfont from 'webfontloader'
 import {history} from '../../routes/index'
 import {BookFlash} from './BookFlash'
 import {convert_price} from '../../methods/convert_price'
-import {fetch_book_detail} from '../../actions/users/book/fetch_book_detail.action'
+import {fetch_book_detail} from '../../actions/users/books/fetch_book_detail.action'
 
 webfont.load({
   google: {
