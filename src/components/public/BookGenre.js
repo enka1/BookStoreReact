@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import {fetch_categories} from '../../methods/fetch_categories'
 import {fetch_by_book_genre} from '../../actions/users/books/fetch_book_list.action'
+
 class BookGenre extends Component {
   constructor(props) {
     super(props)
@@ -83,7 +84,6 @@ const CategoryItem = props => {
 }
 
 const BookGenreStyle = styled.div `
-border: solid 0.2px black;
 padding: 2rem 3rem;
 .genre-name{
     font-size: 1.6rem;

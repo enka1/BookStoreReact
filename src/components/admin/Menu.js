@@ -17,23 +17,23 @@ export class Menu extends Component {
         <ul className="menu-list">
           <li className="menu-list__item">
             <a href="" className="menu-list__link">
-              <i class="mr-3 fas fa-chart-line"></i>Dashboard</a>
+              <i className="mr-3 fas fa-chart-line"></i>Dashboard</a>
           </li>
           <li className="menu-list__item">
             <a href="" className="menu-list__link">
-              <i class="mr-3 far fa-credit-card"></i>Orders</a>
+              <i className="mr-3 far fa-credit-card"></i>Orders</a>
           </li>
           <li className="menu-list__item">
             <a href="" className="menu-list__link">
-              <i class="mr-3 fas fa-history"></i>History</a>
+              <i className="mr-3 fas fa-history"></i>History</a>
           </li>
           <li className="menu-list__item" onClick={() => history.push('/admin/storage')}>
             <a href="" className="menu-list__link">
-              <i class="mr-3 fas fa-store"></i>Storage</a>
+              <i className="mr-3 fas fa-store"></i>Storage</a>
           </li>
           <li className="menu-list__item">
             <a href="" className="menu-list__link">
-              <i class="mr-3 fas fa-sign-out-alt"></i>Sign Out</a>
+              <i className="mr-3 fas fa-sign-out-alt"></i>Sign Out</a>
           </li>
         </ul>
       </MenuStyle>
