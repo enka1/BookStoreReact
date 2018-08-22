@@ -1,12 +1,12 @@
 import axios from 'axios'
 
 export const fetch_storage_items = async (page) => {
-  let results = await axios.get('http://localhost:8000/admin/storage')
+  let results = await axios.get('http://localhost:8000/api/admin/storage')
   return results.data
 }
 
 export const fetch_all_authors = async () => {
-  let results = await axios.get('http://localhost:8000/author')
+  let results = await axios.get('http://localhost:8000/api/author')
   return results
     .data
     .map(author => {
@@ -19,7 +19,7 @@ export const fetch_all_authors = async () => {
 }
 
 export const fetch_all_categories = async () => {
-  let results = await axios.get('http://localhost:8000/categories')
+  let results = await axios.get('http://localhost:8000/api/categories')
   return results
     .data
     .map(category => {
@@ -32,7 +32,7 @@ export const fetch_all_categories = async () => {
 }
 
 export const fetch_all_publisers = async () => {
-  let results = await axios.get('http://localhost:8000/publishers')
+  let results = await axios.get('http://localhost:8000/api/publishers')
   return results
     .data
     .map(publisher => {

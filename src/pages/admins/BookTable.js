@@ -17,7 +17,6 @@ export class BookTable extends Component {
   async componentWillMount() {
     let items = await fetch_storage_items();
     await this.setState({items: items.data})
-    console.log(this.state.items)
   }
 
   renderItems() {

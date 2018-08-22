@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import styled from 'styled-components';
 
 import {BookList} from '../../components/users/BookList'
 import {SearchBar} from '../../components/public/SearchBar'
@@ -61,10 +60,6 @@ class Index extends Component {
   }
 }
 
-const Icon = styled.i `
-  font-size: 2rem;
-  color:#4a148c;
-`
 
 const mapStateToProps = state => {
   return {books: state.books}

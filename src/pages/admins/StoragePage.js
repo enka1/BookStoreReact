@@ -19,10 +19,10 @@ export class StoragePage extends Component {
             <div className="row pl-5 mb-4">
               <div className="col d-flex align-items-center">
                 <button className="btn shadow btn-outline-success" onClick={()=>history.push('/admin/add-items')}>
-                  <i class="fas fa-plus mr-3"></i>
+                  <i className="fas fa-plus mr-3"></i>
                   Thêm sách</button>
                 <button className="btn shadow btn-outline-danger ml-3">
-                  <i class="fas fa-minus mr-3"></i>
+                  <i className="fas fa-minus mr-3"></i>
                   Xóa sách</button>
               </div>
               <div className="col-3 ml-auto">

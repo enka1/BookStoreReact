@@ -1,14 +1,14 @@
 import axios from 'axios'
 
 export const fetch_latest_book = async(page) => {
-  let results = await axios.get('http://localhost:8000/books/latest_arrived', {params: {
+  let results = await axios.get('http://localhost:8000/api/books/latest_arrived', {params: {
       page
     }})
   return results.data
 }
 
 export const fetch_latest_book_INDEX = async() => {
-  let results = await axios.get('http://localhost:8000/books/index/latest_arrived', {
+  let results = await axios.get('http://localhost:8000/api/books/index/latest_arrived', {
     params: {
       limit: 4
     }
@@ -17,6 +17,6 @@ export const fetch_latest_book_INDEX = async() => {
 }
 
 export const fetch_book_slider = async() => {
-  let results = await axios.get('http://localhost:8000/books/book_slider')
+  let results = await axios.get('http://localhost:8000/api/books/book_slider')
   return results.data;
 }
