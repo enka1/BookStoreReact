@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
 import {BookList} from '../../components/users/BookList'
-import {SearchBar} from '../../components/public/SearchBar'
+import SearchBar from '../../components/public/SearchBar'
 import BookGenre from '../../components/public/BookGenre'
 import Paginate from '../../components/users/Paginate'
 import {fetch_latest_book_default} from '../../actions/users/books/fetch_book_list.action'
@@ -31,11 +31,9 @@ class Index extends Component {
     return (
       <div className="container pt-5" id="book-gem-box">
         <div className="row">
-          <div className="col-9 offset-3">
+          <div className="col-7 offset-5">
             <div className="row">
-              <div className="col d-flex align-items-center">
-                
-              </div>
+              <div className="col d-flex align-items-center"></div>
               <div className="col ml-auto">
                 <SearchBar/>
               </div>
@@ -59,7 +57,6 @@ class Index extends Component {
     )
   }
 }
-
 
 const mapStateToProps = state => {
   return {books: state.books}

@@ -73,8 +73,8 @@ const TableItem = (props) => {
       <td>{props.item.book_name}</td>
       <td>{props.item.author.first_name + ' ' + props.item.author.last_name}</td>
       <td>{props.item.publisher.publisher_name}</td>
-      <td>{convert_price(props.item.price) + ' ₫'}</td>
-      <td>@mdo</td>
+      <td>{convert_price(props.item.import_price) + ' ₫'}</td>
+      <td>{convert_price(props.item.sale_price) + ' ₫'}</td>
       <td>{props.item.quantity}</td>
       <td>
         <i className="fas fa-ellipsis-v mx-3 icons"></i>

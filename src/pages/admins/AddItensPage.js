@@ -10,10 +10,11 @@ export class AddItensPage extends Component {
             <Menu/>
           </div>
           <div className="col-10">
-            <NewBookForm></NewBookForm>
+            <NewBookForm/>
           </div>
         </div>
       </div>
     )
   }
 }
+

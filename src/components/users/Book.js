@@ -54,7 +54,7 @@ class Book extends Component {
           alt=""/>
         <div className="book-divider"></div>
         <p className="book-name">{this.props.book.book_name}</p>
-        <p className="price">{convert_price(this.props.book.price)}₫</p>
+        <p className="price">{convert_price(this.props.book.sale_price)}₫</p>
         <BookFlash
           x={this.state.x}
           book={this.props.book}

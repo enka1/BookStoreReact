@@ -63,5 +63,5 @@ export class BookSlider extends Component {
 }
 
 const SliderLayout = styled.div `
-  max-height: 75vh;
+  min-height: 75vh;
 `

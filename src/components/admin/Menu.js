@@ -16,23 +16,23 @@ export class Menu extends Component {
       <MenuStyle className="pt-5">
         <ul className="menu-list">
           <li className="menu-list__item">
-            <a href="" className="menu-list__link">
+            <a className="menu-list__link">
               <i className="mr-3 fas fa-chart-line"></i>Dashboard</a>
           </li>
           <li className="menu-list__item">
-            <a href="" className="menu-list__link">
+            <a className="menu-list__link">
               <i className="mr-3 far fa-credit-card"></i>Orders</a>
           </li>
           <li className="menu-list__item">
-            <a href="" className="menu-list__link">
+            <a className="menu-list__link">
               <i className="mr-3 fas fa-history"></i>History</a>
           </li>
           <li className="menu-list__item" onClick={() => history.push('/admin/storage')}>
-            <a href="" className="menu-list__link">
+            <a className="menu-list__link">
               <i className="mr-3 fas fa-store"></i>Storage</a>
           </li>
           <li className="menu-list__item">
-            <a href="" className="menu-list__link">
+            <a className="menu-list__link">
               <i className="mr-3 fas fa-sign-out-alt"></i>Sign Out</a>
           </li>
         </ul>
@@ -45,9 +45,9 @@ const MenuStyle = styled.div `
     min-height: 100vh;
     height: 100%;
     text-align: center;
-    background-color: #d9e4f5;
-    background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
-    color: #4a148c;
+    background-color: #537895;
+    background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+    color: white;
     .icon{
         height: 6rem;
     }

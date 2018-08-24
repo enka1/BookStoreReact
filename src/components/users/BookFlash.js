@@ -8,8 +8,7 @@ export class BookFlash extends Component {
       return this
         .props
         .book
-        .description[0]
-        .content
+        .description
         .substr(0, 250) + '........'
     }
     return ''

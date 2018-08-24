@@ -20,3 +20,8 @@ export const fetch_book_slider = async() => {
   let results = await axios.get('http://localhost:8000/api/books/book_slider')
   return results.data;
 }
+
+export const search_book = async(book_name) => {
+  let results = await axios.post('http://localhost:8000/api/books/search', {book_name})
+  return results.data
+}
