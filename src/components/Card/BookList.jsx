@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import Book from './Book'
+import Book from './BookCard'
 import styled from 'styled-components';
 
 export class BookList extends Component {
@@ -29,6 +29,5 @@ const BookListStyle = styled.div `
     border-bottom: 3px solid black;
     width: 4rem;
     margin-top: 2rem;
-  
   }
 `

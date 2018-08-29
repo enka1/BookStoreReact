@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import BookDetail from '../../components/users/BookDetail'
+import BookDetail from '../components/App/BookDetail'
 export class BookDetailPage extends Component {
   componentDidMount(){
     window.scroll({

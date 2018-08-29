@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 import moment from 'moment'
-export class BookFlash extends Component {
-  componentDidMount() {}
+export class FlashCard extends Component {
   getBookDescription() {
     if (this.props.book.description.length > 0) {
       return this
@@ -34,7 +33,7 @@ export class BookFlash extends Component {
             </strong>
             {' ' + moment(this.props.book.on_shelf_time).format('DD/MM/YYYY')}</p>
           <p>
-            <strong>Sơ lược:
+            <strong className="mr-2">Sơ lược:
             </strong>
             {this.getBookDescription()}</p>
         </BookInfo>

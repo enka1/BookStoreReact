@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 
-import {LoginForm} from '../../components/public/LoginForm'
+import {LoginForm} from '../components/Form/LoginForm'
 
 export class LoginPage extends Component {
   render() {

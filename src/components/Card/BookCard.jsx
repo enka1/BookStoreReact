@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import webfont from 'webfontloader'
 
 import {history} from '../../routes/index'
-import {BookFlash} from './BookFlash'
+import {FlashCard} from './FlashCard'
 import {convert_price} from '../../methods/convert_price'
 import {fetch_book_detail} from '../../actions/users/books/fetch_book_detail.action'
 
@@ -14,7 +14,7 @@ webfont.load({
   }
 })
 
-class Book extends Component {
+class BookCard extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -32,8 +32,8 @@ class Book extends Component {
   mouseMoveHandle(e) {
     this.setState({x: e.screenX, y: e.screenY})
   }
-  onClickHandle() {
-    this
+  async onClickHandle() {
+    await this
       .props
       .dispatch(fetch_book_detail(this.props.book.book_id))
     history.push(`/book-detail/${this.props.book.book_id}`)
@@ -55,7 +55,7 @@ class Book extends Component {
         <div className="book-divider"></div>
         <p className="book-name">{this.props.book.book_name}</p>
         <p className="price">{convert_price(this.props.book.sale_price)}₫</p>
-        <BookFlash
+        <FlashCard
           x={this.state.x}
           book={this.props.book}
           y={this.state.y}
@@ -82,14 +82,10 @@ const BookLayout = styled.div `
         cursor: pointer;
         height: 30rem;
     }
-    .book-image:hover{
-      transform: translateY(-2rem);
-      transition: all.2s
-    }
     .price{
         font-size: 1.3rem;
         font-weight: bold;
     }
 `
 
-export default connect()(Book)
+export default connect()(BookCard)

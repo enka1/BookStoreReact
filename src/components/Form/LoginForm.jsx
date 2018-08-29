@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 
-import {history} from '../../routes'
+import {history} from '../../routes/index'
 
 export class LoginForm extends Component {
   goToIndexPage(){

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Search} from 'semantic-ui-react'
-import {history} from '../../routes'
+import {history} from '../../routes/index'
 import _ from 'lodash'
 import styled from 'styled-components'
 import {connect} from 'react-redux'

@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
-import {BookList} from '../../components/users/BookList'
-import SearchBar from '../../components/public/SearchBar'
-import BookGenre from '../../components/public/BookGenre'
-import Paginate from '../../components/users/Paginate'
-import {fetch_latest_book_default} from '../../actions/users/books/fetch_book_list.action'
+import {BookList} from '../components/Card/BookList'
+import SearchBar from '../containers/Input/SearchBar'
+import BookGenre from '../components/Table/Category'
+import Paginate from '../components/Menu/PaginationBar'
+import {fetch_by_book_genre} from '../actions/users/books/fetch_book_list.action'
 
 class Index extends Component {
   constructor(props) {
@@ -17,12 +17,12 @@ class Index extends Component {
   componentDidMount() {
     this
       .props
-      .dispatch(fetch_latest_book_default())
+      .dispatch(fetch_by_book_genre(1, null, 'on_shelf_time', false))
   }
   changePage(page) {
     this
       .props
-      .dispatch(fetch_latest_book_default(page))
+      .dispatch(fetch_by_book_genre(page, null, 'on_shelf_time', false))
     document
       .getElementById('book-gem-box')
       .scrollIntoView({behavior: 'smooth', block: 'start'})

@@ -7,12 +7,13 @@ import moment from 'moment'
 import 'moment/locale/vi'
 import 'react-datepicker/dist/react-datepicker.css'
 
-import {history} from '../../routes'
-import {fetch_all_authors, fetch_all_categories, fetch_all_publisers} from '../../methods/admin/fetch_data'
+import {history} from '../../routes/index'
+import {fetch_all_authors, fetch_all_categories, fetch_all_publisers, fetch_book_detail} from '../../methods/admin/fetch_data'
 import {quantity_input, price_input} from '../../methods/admin/input_format'
 import {add_new_book} from '../../methods/admin/add_new_book'
-import {convert_string_to_price} from '../../methods/convert_price'
-export class NewBookForm extends Component {
+import {convert_string_to_price, convert_price} from '../../methods/convert_price'
+
+export class UpdateBook extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -38,10 +39,29 @@ export class NewBookForm extends Component {
       sale_price: 0,
       quantity: 0,
       description: '',
-      on_shelft_time: moment()
+      on_shelf_time: moment()
     }
   }
   async componentDidMount() {
+    let book = await fetch_book_detail(this.props.id)
+    console.log(book)
+    await this.setState({
+      book_name: book.book_name,
+      author: book.author_id,
+      publisher: book.publisher_id,
+      book_category: book
+        .categories
+        .categories
+        .substring(1, book.categories.categories.length - 1)
+        .split(','),
+      import_price: convert_price(book.import_price),
+      sale_price: convert_price(book.sale_price),
+      quantity: book.quantity,
+      description: book.description,
+      on_shelf_time: moment(book.on_shelf_time, 'YYYY-MM-DD'),
+      book_img: book.image_url
+    })
+
     this.setState({authors: await fetch_all_authors(), categories: await fetch_all_categories(), publishers: await fetch_all_publisers()})
   }
   async submitHandle() {
@@ -59,7 +79,6 @@ export class NewBookForm extends Component {
         description: this.state.description
       }
       let result = await add_new_book(book)
-      console.log(result)
       if (result.status === 'success') {
         history.push('/admin/storage')
       } else {
@@ -159,6 +178,9 @@ export class NewBookForm extends Component {
                 alt="Book-img"/>
             </div>
             <Input
+              input={< input value = {
+              this.state.book_img
+            } />}
               iconPosition="left"
               icon="image outline"
               placeholder="Image URL"
@@ -190,6 +212,7 @@ export class NewBookForm extends Component {
                   fluid
                   search
                   selection
+                  value={this.state.author}
                   options={this.state.authors}
                   className="h1"/>
                 <p>
@@ -208,6 +231,7 @@ export class NewBookForm extends Component {
                   error={this.state.error.publisher.length > 0}
                   onChange={((e, {value}) => this.setState({publisher: value}))}
                   fluid
+                  value={this.state.publisher}
                   search
                   selection
                   options={this.state.publishers}
@@ -228,6 +252,7 @@ export class NewBookForm extends Component {
               <div className="row m-0">
                 <div className="col-9"></div>
                 <Dropdown
+                  value={this.state.book_category}
                   error={this.state.error.book_category.length > 0}
                   onChange={(e, {value}) => this.setState({book_category: value})}
                   search
@@ -298,8 +323,8 @@ export class NewBookForm extends Component {
               <DatePicker
                 dateFormat="DD/MM/YYYY"
                 locale="vi"
-                selected={this.state.on_shelft_time}
-                onChange={date => this.setState({on_shelft_time: date})}
+                selected={this.state.on_shelf_time}
+                onChange={date => this.setState({on_shelf_time: date})}
                 className="input lead form-control"/>
             </div>
             <div className="form-group">
@@ -326,7 +351,7 @@ export class NewBookForm extends Component {
             </div>
             <button
               onClick={() => this.submitHandle()}
-              className="btn btn-dark button mt-3">Thêm sách vào kho</button>
+              className="btn btn-outline-success button mt-3">Cập nhật thông tin sách</button>
           </div>
         </div>
       </BookFormStyle>

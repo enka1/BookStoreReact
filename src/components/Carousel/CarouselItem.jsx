@@ -1,19 +1,19 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 
-export class SliderItem extends Component {
+export class CarouselItem extends Component {
   render() {
     return (
       <BookItem
-        image_url={this.props.book.image_url}
+        image_url={this.props.book.slider.image_url}
         className={this.props.className}>
         <div className="col-lg-6 mx-auto gem-box">
           <div className="book-quote">
-            <p className="book-name font-weight-bold display-4 text-white">{this.props.book.book.book_name}</p>
+            <p className="book-name font-weight-bold display-4 text-white">{this.props.book.book_name}</p>
             <div className="divider"></div>
             <blockquote className="mb-3">
-              <p className="mb-2 pr-4 blockquote-body text-white">{this.props.book.quote}</p>
-              <footer className="blockquote-footer text-white lead">{this.props.book.character_name}</footer>
+              <p className="mb-2 pr-4 blockquote-body text-white">{this.props.book.slider.quote}</p>
+              <footer className="blockquote-footer text-white lead">{this.props.book.slider.character_name}</footer>
             </blockquote>
             <div className="btn btn-outline-light">
               <span className="lead p-3 font-weight-bold font-italic">Tìm hiểu thêm</span>
@@ -21,7 +21,7 @@ export class SliderItem extends Component {
           </div>
           <img
             className="book-img float-left shadow"
-            src={this.props.book.book.image_url}
+            src={this.props.book.image_url}
             alt=""/>
 
         </div>

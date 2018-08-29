@@ -2,32 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="843b72c1-ab82-4627-81b1-d448ef9070bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/public/Menu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/users/Book.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/StoragePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/author/fetch_author_detail.action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/users/author/fetch_author_detail.action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/book/fetch_book_detail.action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/users/book/fetch_book_detail.action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BestSeller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/BestSeller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BookFlash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/BookFlash.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BookList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/BookList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Paginate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/Paginate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SliderItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/SliderItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/book.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/BookDetail.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/BookSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/public/BookSlider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/method/convert_price.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/methods/convert_price.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/method/fetch_book_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/methods/fetch_book_data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/BookDetailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/publics/BookDetailPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/publics/Index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/NewBooksPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/publics/NewBooksPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/author.reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/author.reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/book_detail.reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/book_detail.reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/public/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/public/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/users/books/fetch_book_detail.action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/users/books/fetch_book_detail.action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/users/books/fetch_book_list.action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/users/books/fetch_book_list.action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu/VerticalMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/StorageState.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/public/BookGenre.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Table/Category.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/public/BookSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel/CarouselList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/public/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/public/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/public/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/LoginForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/public/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu/HorizontalMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/public/SearchBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Input/SearchBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/BestSeller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/BestSeller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/Book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/BookCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/BookDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/BookDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/BookFlash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/FlashCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/BookList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/BookList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/Paginate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu/PaginationBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/SliderItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel/CarouselItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/methods/admin/fetch_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/methods/admin/fetch_data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/methods/fetch_book_data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/methods/fetch_book_data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mixins/public.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/mixins/public.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admins/AddItensPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AddItensPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admins/BookTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Table/StorageTable.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admins/NewBookForm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admins/OrderHistoryPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/OrderHistoryPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admins/StoragePage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/publics/BookDetailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/BookDetailPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/publics/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/publics/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/publics/NewBooksPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/NewBooksPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/books.reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/books.reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,29 +53,56 @@
     <session id="-1648089115">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.3" value="2" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="1" />
+          <entry key="js" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="1" />
+          <entry key="JavaScript" value="12" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/public/Menu.js">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Menu/HorizontalMenu.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-529">
+              <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Menu/PaginationBar.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state>
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Form/NewBookForm.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="365" column="24" lean-forward="true" selection-start-line="365" selection-start-column="24" selection-end-line="365" selection-end-column="24" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -76,6 +114,18 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/components/public/HorizontalMenu.js" />
+        <option value="$PROJECT_DIR$/src/components/App/HorizontalMenu.js" />
+        <option value="$PROJECT_DIR$/src/components/App/BookCard/Book.js" />
+        <option value="$PROJECT_DIR$/src/components/App/Card/BookCard.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Card/BookCard.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Form/NewBookForm.js" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
@@ -97,7 +147,7 @@
     <option name="x" value="85" />
     <option name="y" value="25" />
     <option name="width" value="1750" />
-    <option name="height" value="969" />
+    <option name="height" value="970" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -105,6 +155,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -127,40 +178,26 @@
               <item name="BookStoreReact" type="b2602c69:ProjectViewProjectNode" />
               <item name="BookStoreReact" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BookStoreReact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BookStoreReact" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BookStoreReact" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BookStoreReact" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Enka\Desktop\BookStoreReact\src\components\public" />
-      <recent name="C:\Users\Enka\Desktop\BookStoreReact\src\components\publics" />
-      <recent name="C:\Users\Enka\Desktop\BookStoreReact\src\pages\publics" />
-      <recent name="C:\Users\Enka\Desktop\BookStoreReact\src\routes\public" />
-      <recent name="C:\Users\Enka\Desktop\BookStoreReact\src\actions\users" />
+      <recent name="C:\Users\Enka\Desktop\BookStoreReact\src\components" />
+      <recent name="C:\Users\Enka\Desktop\BookStoreReact\src\containers" />
+      <recent name="C:\Users\Enka\Desktop\BookStoreReact\src" />
+      <recent name="C:\Users\Enka\Desktop\BookStoreReact\src\components\Table" />
+      <recent name="C:\Users\Enka\Desktop\BookStoreReact\src\components\Footer" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -187,11 +224,14 @@
       <updated>1534056866591</updated>
       <workItem from="1534056869498" duration="263000" />
       <workItem from="1534058339304" duration="769000" />
+      <workItem from="1535513303177" duration="1971000" />
+      <workItem from="1535542342873" duration="926000" />
+      <workItem from="1535543790323" duration="1108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1032000" />
+    <option name="totallyTimeSpent" value="5037000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -223,9 +263,94 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/public/Menu.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Footer/Footer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Header/Header.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-414">
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Table/Category.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1863">
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Table/StorageTable.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App/BookDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Input/SearchBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-235">
+          <caret line="38" column="16" lean-forward="true" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Card/BookCard.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Menu/HorizontalMenu.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-529">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Menu/PaginationBar.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state>
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Form/NewBookForm.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="365" column="24" lean-forward="true" selection-start-line="365" selection-start-column="24" selection-end-line="365" selection-end-column="24" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>

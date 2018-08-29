@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Menu} from '../../components/admin/Menu'
+import {VerticalMenu} from '../components/Menu/VerticalMenu'
 
 export class OrderHistoryPage extends Component {
   render() {
@@ -7,7 +7,7 @@ export class OrderHistoryPage extends Component {
       <div>
         <div className="row w-100 m-0">
           <div className="col-2 m-0 p-0">
-            <Menu/>
+            <VerticalMenu/>
           </div>
         </div>
       </div>

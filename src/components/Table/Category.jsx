@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import {fetch_categories} from '../../methods/fetch_categories'
 import {fetch_by_book_genre} from '../../actions/users/books/fetch_book_list.action'
 
-class BookGenre extends Component {
+class Category extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -163,4 +163,4 @@ padding: 2rem 3rem;
 }
 `
 
-export default connect(null)(BookGenre)
+export default connect(null)(Category)

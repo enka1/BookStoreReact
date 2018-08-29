@@ -17,7 +17,7 @@ export const fetch_latest_book_INDEX = async() => {
 }
 
 export const fetch_book_slider = async() => {
-  let results = await axios.get('http://localhost:8000/api/books/book_slider')
+  let results = await axios.get('http://localhost:8000/api/books/slider')
   return results.data;
 }
 

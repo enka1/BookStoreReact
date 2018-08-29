@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
-import {history} from '../../routes'
-export class Menu extends Component {
+import {history} from '../../routes/index'
+export class HorizontalMenu extends Component {
   render() {
     return (
       <MenuStyled>

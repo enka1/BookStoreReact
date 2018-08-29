@@ -1,30 +1,15 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 
-import {fetch_storage_items} from '../../methods/admin/fetch_data'
 import {convert_price} from '../../methods/convert_price'
-
-export class BookTable extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      items: []
-    }
-    this.renderItems = this
-      .renderItems
-      .bind(this)
-  }
-  async componentWillMount() {
-    let items = await fetch_storage_items();
-    await this.setState({items: items.data})
-  }
+export class StorageTable extends Component {
 
   renderItems() {
-    if (this.state.items.length > 0) {
+    if (this.props.books && this.props.books.length > 0) {
       return this
-        .state
-        .items
-        .map(item => <TableItem item={item} key={item.book_id}/>)
+        .props
+        .books
+        .map(book => <TableItem book={book} key={book.book_id}/>)
     }
   }
   render() {
@@ -59,10 +44,10 @@ export class BookTable extends Component {
 
 const TableItem = (props) => {
   return (
-    <tr>
+    <tr className="items">
       <td>
-        <input className="inp-cbx d-none" id={props.item.book_id} type="checkbox"/>
-        <label className="cbx ml-4 d-block" htmlFor={props.item.book_id}>
+        <input className="inp-cbx d-none" id={props.book.book_id} type="checkbox"/>
+        <label className="cbx ml-4 d-block" htmlFor={props.book.book_id}>
           <span>
             <svg width="12px" height="10px" viewBox="0 0 12 10">
               <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
@@ -70,26 +55,26 @@ const TableItem = (props) => {
           </span>
         </label >
       </td>
-      <td>{props.item.book_name}</td>
-      <td>{props.item.author.first_name + ' ' + props.item.author.last_name}</td>
-      <td>{props.item.publisher.publisher_name}</td>
-      <td>{convert_price(props.item.import_price) + ' ₫'}</td>
-      <td>{convert_price(props.item.sale_price) + ' ₫'}</td>
-      <td>{props.item.quantity}</td>
+      <td>{props.book.book_name}</td>
+      <td>{props.book.author.first_name + ' ' + props.book.author.last_name}</td>
+      <td>{props.book.publisher.publisher_name}</td>
+      <td>{convert_price(props.book.import_price) + ' ₫'}</td>
+      <td>{convert_price(props.book.sale_price) + ' ₫'}</td>
+      <td>{props.book.quantity}</td>
       <td>
-        <i className="fas fa-ellipsis-v mx-3 icons"></i>
+        <i class="far fa-edit icon fa-2x"></i>
       </td>
     </tr>
   )
 }
 
 const TableStyle = styled.table ` 
-.icons{
-  color: #d2ddec;
+.icon:hover{
+  cursor:pointer;
+  color: #e0f2f1;
 }
-.icons:hover{
-  color: black;
-  cursor: pointer;
+.icon{
+  color: #9e9e9e;
 }
 opacity: .9;
     font-size: 1.3rem; 

@@ -2,9 +2,9 @@ import React, {Component} from 'react'
 import styled from 'styled-components'
 
 import {fetch_book_slider} from '../../methods/fetch_book_data'
-import {SliderItem} from '../users/SliderItem'
+import {CarouselItem} from './CarouselItem'
 
-export class BookSlider extends Component {
+export class CarouselList extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -18,7 +18,7 @@ export class BookSlider extends Component {
     if (this.state.books.length > 0) {
       let slider_item = []
       for (let i = 0; i < this.state.books.length; i++) {
-        slider_item.push(<SliderItem
+        slider_item.push(<CarouselItem
           key={this.state.books[i].book_id}
           book={this.state.books[i]}
           className={i === 0
@@ -64,4 +64,5 @@ export class BookSlider extends Component {
 
 const SliderLayout = styled.div `
   min-height: 75vh;
+  background-color: gray;
 `

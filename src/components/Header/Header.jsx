@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import styled from 'styled-components'
 import webfont from 'webfontloader'
 
-import {history} from '../../routes'
+import {history} from '../../routes/index'
 
 webfont.load({
   google: {

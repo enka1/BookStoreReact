@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 
-import {BookList} from '../../components/users/BookList'
-import {Paginate} from '../../components/users/Paginate'
-import {fetch_latest_book} from '../../methods/fetch_book_data'
+import {BookList} from '../components/Card/BookList'
+import {PaginationBar} from '../components/Menu/PaginationBar'
+import {fetch_latest_book} from '../methods/fetch_book_data'
 
 export class NewBooksPage extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ export class NewBooksPage extends Component {
       return (
         <div className="container mt-5 pt-5">
           <BookList center books={this.state.data.data} title='Sách mới'/>
-          <Paginate
+          <PaginationBar
             currentPage={this.state.currentPage}
             changePage={this.changePage}
             total={this.state.data.last_page}/>

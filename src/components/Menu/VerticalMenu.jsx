@@ -10,7 +10,7 @@ webfont.load({
   }
 })
 
-export class Menu extends Component {
+export class VerticalMenu extends Component {
   render() {
     return (
       <MenuStyle className="pt-5">
@@ -57,6 +57,7 @@ const MenuStyle = styled.div `
     .menu-list{
         
         &__item{
+            cursor:pointer;
             position: relative;
             padding: 1rem 0;
             text-align: left;

@@ -2,9 +2,8 @@ import React, {Component} from 'react'
 
 import styled from 'styled-components'
 import {connect} from 'react-redux'
-export class Paginate extends Component {
+export class PaginationBar extends Component {
   onClickHandle(page) {
-    console.log(page)
     this
       .props
       .changePage(page)
@@ -62,4 +61,4 @@ const PaginateStyle = styled.div `
   font-size: 1.7rem;
 `
 
-export default connect(null)(Paginate)
+export default connect(null)(PaginationBar)
