@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
+
 import {Footer} from '../components/Footer/Footer'
 import {Header} from '../components/Header/Header'
-import {HorizontalMenu} from '../components/Menu/HorizontalMenu'
+import {HorizontalMenu} from '../components/Menu/HorizontalMenu'  
 import {CarouselList} from '../components/Carousel/CarouselList'
 
-
-export const withPublicComponent = (WrappedComponent) => {
+export const add_header_footer = (WrappedComponent) => {
   return class extends Component {
     render() {
       return (

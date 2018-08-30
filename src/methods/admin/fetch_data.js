@@ -26,9 +26,7 @@ export const fetch_all_categories = async() => {
 }
 
 export const fetch_book_detail = async(book_id) => {
-  let results = await axios.get('http://localhost:8000/api/books/book_detail', {params: {
-      book_id
-    }})
+  let results = await axios.get(`http://localhost:8000/api/books/book-detail/${book_id}`)
   return results.data
 }
 

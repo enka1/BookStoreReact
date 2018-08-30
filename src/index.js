@@ -2,6 +2,7 @@ import React from 'react'
 import {render} from 'react-dom'
 import {Provider} from 'react-redux'
 import 'semantic-ui-css/semantic.min.css'
+import 'antd/dist/antd.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './style/index.css'
 

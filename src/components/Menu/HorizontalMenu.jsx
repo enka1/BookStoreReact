@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
+
 import {history} from '../../routes/index'
 export class HorizontalMenu extends Component {
   render() {
@@ -10,17 +11,20 @@ export class HorizontalMenu extends Component {
           <ul className="navbar-nav">
             <li className="nav-item">
               <a className="nav-link lead">
-                <i className="fas fa-home mr-3 text-primary"></i>
+                <i className="fas fa-home mr-2 text-primary"></i>
                 Trang chủ</a>
             </li>
             <li className="nav-item">
               <a
                 className="nav-link lead"
-                onClick={() => history.push('/')}
+                onClick={(e) => {
+                window.scroll({top: 0, left: 0});
+                history.push('/')
+              }}
                 style={{
                 cursor: 'pointer'
               }}>
-                <i className="fas fa-th mr-3 text-danger"></i>
+                <i className="fas fa-th mr-2 text-danger"></i>
                 Danh mục sách</a>
             </li>
             <li className="nav-item">
@@ -30,7 +34,7 @@ export class HorizontalMenu extends Component {
             </li>
             <li className="nav-item">
               <a className="nav-link lead">
-                <i className="fas fa-shopping-cart text-dark mr-3"></i>
+                <i className="fas fa-shopping-cart text-dark mr-2"></i>
                 Giỏ hàng
               </a>
             </li>

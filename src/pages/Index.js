@@ -30,16 +30,8 @@ class Index extends Component {
   render() {
     return (
       <div className="container pt-5" id="book-gem-box">
-        <div className="row">
-          <div className="col-7 offset-5">
-            <div className="row">
-              <div className="col d-flex align-items-center"></div>
-              <div className="col ml-auto">
-                <SearchBar/>
-              </div>
-            </div>
-          </div>
-
+        <div className="col-3 p-0 ml-auto">
+          <SearchBar/>
         </div>
         <div className="row mt-5">
           <div className="col-3">

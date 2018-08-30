@@ -3,14 +3,16 @@ import styled from 'styled-components'
 import moment from 'moment'
 export class FlashCard extends Component {
   getBookDescription() {
-    if (this.props.book.description.length > 0) {
-      return this
-        .props
-        .book
-        .description
-        .substr(0, 250) + '........'
+    if (this.props.book.description) {
+      if (this.props.book.description.length > 0) {
+        return this
+          .props
+          .book
+          .description
+          .substr(0, 250) + '........'
+      }
+      return ''
     }
-    return ''
   }
   render() {
     if (this.props.book) {

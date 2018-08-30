@@ -10,7 +10,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 import {history} from '../../routes/index'
 import {fetch_all_authors, fetch_all_categories, fetch_all_publisers} from '../../methods/admin/fetch_data'
 import {quantity_input, price_input} from '../../methods/admin/input_format'
-import {add_new_book} from '../../methods/admin/add_new_book'
+import {add_new_book} from '../../methods/admin/mutation'
 import {convert_string_to_price} from '../../methods/convert_price'
 export class NewBookForm extends Component {
   constructor(props) {
@@ -54,7 +54,7 @@ export class NewBookForm extends Component {
         categories: this.state.book_category,
         import_price: convert_string_to_price(this.state.import_price),
         sale_price: convert_string_to_price(this.state.sale_price),
-        book_img: this.state.book_img,
+        image_url: this.state.book_img,
         quantity: this.state.quantity,
         description: this.state.description
       }
@@ -62,6 +62,7 @@ export class NewBookForm extends Component {
       if (result.status === 'success') {
         history.push('/admin/storage')
       } else {
+        console.log(result)
         alert('fail')
       }
     }

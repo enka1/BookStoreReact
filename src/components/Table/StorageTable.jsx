@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import styled from 'styled-components'
 
 import {convert_price} from '../../methods/convert_price'
+import {history} from '../../routes'
 export class StorageTable extends Component {
 
   renderItems() {
@@ -62,20 +63,25 @@ const TableItem = (props) => {
       <td>{convert_price(props.book.sale_price) + ' ₫'}</td>
       <td>{props.book.quantity}</td>
       <td>
-        <i class="far fa-edit icon fa-2x"></i>
+        <i
+          className="far fa-edit icon"
+          onClick={() => history.push(`/admin/items/${props.book.book_id}`)}></i>
       </td>
     </tr>
   )
 }
 
 const TableStyle = styled.table ` 
-.icon:hover{
-  cursor:pointer;
-  color: #e0f2f1;
-}
 .icon{
-  color: #9e9e9e;
+  position: relative;
+  color: #d2ddec;
 }
+.icon:hover{
+  cursor: pointer;
+  color: black;
+}
+
+
 opacity: .9;
     font-size: 1.3rem; 
     th{

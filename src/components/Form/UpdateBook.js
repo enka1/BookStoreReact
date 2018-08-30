@@ -10,7 +10,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 import {history} from '../../routes/index'
 import {fetch_all_authors, fetch_all_categories, fetch_all_publisers, fetch_book_detail} from '../../methods/admin/fetch_data'
 import {quantity_input, price_input} from '../../methods/admin/input_format'
-import {add_new_book} from '../../methods/admin/add_new_book'
+import {update_book} from '../../methods/admin/mutation'
 import {convert_string_to_price, convert_price} from '../../methods/convert_price'
 
 export class UpdateBook extends Component {
@@ -44,16 +44,17 @@ export class UpdateBook extends Component {
   }
   async componentDidMount() {
     let book = await fetch_book_detail(this.props.id)
-    console.log(book)
     await this.setState({
       book_name: book.book_name,
       author: book.author_id,
       publisher: book.publisher_id,
-      book_category: book
-        .categories
-        .categories
-        .substring(1, book.categories.categories.length - 1)
-        .split(','),
+      book_category: book.categories
+        ? book
+          .categories
+          .categories
+          .substring(1, book.categories.categories.length - 1)
+          .split(',')
+        : [],
       import_price: convert_price(book.import_price),
       sale_price: convert_price(book.sale_price),
       quantity: book.quantity,
@@ -67,6 +68,7 @@ export class UpdateBook extends Component {
   async submitHandle() {
     if (this.validateForm()) {
       let book = {
+        book_id: this.props.id,
         book_name: this.state.book_name,
         author_id: this.state.author,
         publisher_id: this.state.publisher,
@@ -78,11 +80,11 @@ export class UpdateBook extends Component {
         quantity: this.state.quantity,
         description: this.state.description
       }
-      let result = await add_new_book(book)
+      let result = await update_book(book)
       if (result.status === 'success') {
         history.push('/admin/storage')
       } else {
-        alert('fail')
+        console.log(result)
       }
     }
   }
