@@ -17,7 +17,7 @@ export class LoginPage extends Component {
 
 const LoginPageStyle = styled.div `
     position: relative;
-    background-image: url(https://i.pximg.net/img-original/img/2014/01/20/20/42/35/41079925_p0.jpg);
+    background-image: url(https://i.pinimg.com/originals/b9/07/4e/b9074e26d06cbf355cb349abe401f4a5.png);
     min-height: 100vh;
     background-size: cover;
     background-position: center;

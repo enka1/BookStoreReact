@@ -7,6 +7,7 @@ import {InputNumber} from 'antd'
 
 import {fetch_book_detail} from '../../actions/users/books/fetch_book_detail.action'
 import {convert_price} from '../../methods/convert_price'
+import {history} from '../../routes'
 
 webfont.load({
   google: {
@@ -14,12 +15,26 @@ webfont.load({
   }
 })
 class BookDetail extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      quantity: 1
+    }
+  }
   componentDidMount() {
     if (!this.props.book.image_url) {
       this
         .props
         .dispatch(fetch_book_detail(this.props.book_id))
     }
+  }
+  addToCart() {
+    let item = {
+      id: this.props.book_id,
+      quantity: this.state.quantity
+    }
+    localStorage.setItem('cart', JSON.stringify(item))
+    history.push('/cart')
   }
   render() {
     return (
@@ -50,19 +65,26 @@ class BookDetail extends Component {
                   : ''}</span>
             </div>
             <div className="py-3">
-              Số lượng:<InputNumber className="lead my-2 ml-3"/>
+              Số lượng:
+              <InputNumber
+                className="ml-3"
+                defaultValue={1}
+                onChange={(value) => {
+                this.setState({quantity: value})
+              }}
+                min={1}/>
             </div>
-
-            <div className="btn lead py-3 px-4 btn-outline-success mt-3">
+            <div
+              className="btn lead py-3 px-4 btn-outline-success mt-3"
+              onClick={() => this.addToCart()}>
               <i className="fas fa-shopping-cart mr-2"></i>
               Thêm vào giỏ hàng</div>
           </div>
         </div>
         <div className="mt-5">
-          <p>Sơ lược:</p>
-          <p className="">
-            {this.props.book.description}
-          </p>
+          <p className="h3">Sơ lược:</p>
+          <div className="divide"></div>
+          <div className="lead description">{this.props.book.description}</div>
         </div>
       </BookDetailStyle>
     )
@@ -74,6 +96,16 @@ const mapStateToProps = (state) => {
 }
 
 const BookDetailStyle = styled.div `
+.divide{
+  margin: 1rem 0;
+  width: 3rem;
+  border-bottom: 3px solid black
+}
+  .description{
+    white-space: pre-line;
+    line-height: 150%;
+    font-size: 1.35rem
+  }
   .btn{
     font-size: 1.2rem;
   }

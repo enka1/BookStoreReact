@@ -53,8 +53,8 @@ class BookCard extends Component {
           src={this.props.book.image_url}
           alt=""/>
         <div className="book-divider"></div>
-        <p className="book-name">{this.props.book.book_name}</p>
-        <p className="price">{convert_price(this.props.book.sale_price)}₫</p>
+        <p className="price lead">{convert_price(this.props.book.sale_price)}
+          ₫</p>
         <FlashCard
           x={this.state.x}
           book={this.props.book}
@@ -80,7 +80,7 @@ const BookLayout = styled.div `
     }
     .book-image{
         cursor: pointer;
-        height: 30rem;
+        width: 20rem;
     }
     .price{
         font-size: 1.3rem;

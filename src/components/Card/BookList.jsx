@@ -9,7 +9,10 @@ export class BookList extends Component {
       return this
         .props
         .books
-        .map(book => <Book className="col-lg-3 col-md-4" book={book} key={book.book_id}/>)
+        .map(book => <Book
+          className="col-lg-3 col-md-4 align-self-end"
+          book={book}
+          key={book.book_id}/>)
     }
   }
   render() {

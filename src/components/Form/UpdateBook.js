@@ -44,6 +44,7 @@ export class UpdateBook extends Component {
   }
   async componentDidMount() {
     let book = await fetch_book_detail(this.props.id)
+    console.log(book)
     await this.setState({
       book_name: book.book_name,
       author: book.author_id,
@@ -66,6 +67,7 @@ export class UpdateBook extends Component {
     this.setState({authors: await fetch_all_authors(), categories: await fetch_all_categories(), publishers: await fetch_all_publisers()})
   }
   async submitHandle() {
+    console.log(this.state.description)
     if (this.validateForm()) {
       let book = {
         book_id: this.props.id,
